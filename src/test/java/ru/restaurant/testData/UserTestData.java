@@ -1,6 +1,7 @@
-package ru.restaurant;
+package ru.restaurant.testData;
 
 
+import ru.restaurant.TestMatcher;
 import ru.restaurant.model.Role;
 import ru.restaurant.model.User;
 import ru.restaurant.to.UserTo;

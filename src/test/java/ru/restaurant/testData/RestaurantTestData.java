@@ -1,10 +1,11 @@
-package ru.restaurant;
+package ru.restaurant.testData;
 
+import ru.restaurant.TestMatcher;
 import ru.restaurant.model.Restaurant;
 
 import java.util.List;
 
-import static ru.restaurant.DishTestData.*;
+import static ru.restaurant.testData.DishTestData.*;
 import static ru.restaurant.model.AbstractBaseEntity.START_SEQ;
 
 public class RestaurantTestData {

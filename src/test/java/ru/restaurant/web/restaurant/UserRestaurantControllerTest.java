@@ -2,9 +2,9 @@ package ru.restaurant.web.restaurant;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import ru.restaurant.RestaurantTestData;
+import ru.restaurant.testData.RestaurantTestData;
 import ru.restaurant.TestUtil;
-import ru.restaurant.UserTestData;
+import ru.restaurant.testData.UserTestData;
 import ru.restaurant.web.AbstractControllerTest;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;

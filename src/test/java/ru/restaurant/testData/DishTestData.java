@@ -1,5 +1,6 @@
-package ru.restaurant;
+package ru.restaurant.testData;
 
+import ru.restaurant.TestMatcher;
 import ru.restaurant.model.Dish;
 
 import java.time.LocalDate;

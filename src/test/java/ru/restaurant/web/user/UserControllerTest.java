@@ -5,7 +5,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import ru.restaurant.TestUtil;
-import ru.restaurant.UserTestData;
+import ru.restaurant.testData.UserTestData;
 import ru.restaurant.web.AbstractControllerTest;
 import ru.restaurant.model.User;
 import ru.restaurant.util.UserUtil;

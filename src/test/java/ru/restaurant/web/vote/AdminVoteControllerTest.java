@@ -3,8 +3,8 @@ package ru.restaurant.web.vote;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import ru.restaurant.TestUtil;
-import ru.restaurant.UserTestData;
-import ru.restaurant.VoteTestData;
+import ru.restaurant.testData.UserTestData;
+import ru.restaurant.testData.VoteTestData;
 import ru.restaurant.web.AbstractControllerTest;
 
 import java.util.List;
