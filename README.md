@@ -16,7 +16,7 @@ Build a voting system for deciding where to have lunch.
 Each restaurant provides new menu each day.
 
 ### Authorization provided by Basic authorization
-### HSQLDB embedded, working without installation of DB
+### HSQLDB inmemory, working without installation of DB
 ### Works with JSON
 
 
