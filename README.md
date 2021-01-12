@@ -15,32 +15,36 @@ Build a voting system for deciding where to have lunch.
 
 Each restaurant provides new menu each day.
 
----
-# API methods
-#### For regular user
-#### User
-##### Get current user info
-`curl http://localhost:8080/rest/profile --user user@yandex.ru:password`
-##### Register new user
-`curl -H "Content-Type:application/json" -X POST -d "{\"name\":\"UserNew\",\"email\":\"user_new@yandex.ru\",\"password\":\"newPass123\"}" http://localhost:8080/rest/users/register`
+### Authorization provided by Basic authorization
+### HSQLDB embedded, working without installation of DB
+### Works with JSON
 
-#### Restaurant
+
+
+---
+#CURL samples
+
+## User functionality
+##### Get user profile
+`curl http://localhost:8080/rest/profile --user user@yandex.ru:password`
 ##### Get menu restaurants today
 `curl http://localhost:8080/rest/restaurants --user user@yandex.ru:password`
 ##### Get menu restaurant today(id = 100005)
 `curl http://localhost:8080/rest/restaurants/100005 --user user@yandex.ru:password`
-
-#### Vote
 ##### Create vote(restaurantId = 100004)
 `curl -H "Content-Type:application/json" -X POST http://localhost:8080/rest/restaurants/100004/votes --user test_user@mail.ru:password`
 ##### Update vote(restaurantId = 100004)
 `curl -H "Content-Type:application/json" -X PUT http://localhost:8080/rest/restaurants/100004/votes --user test_user@mail.ru:password`
 ##### Delete vote(restaurantId = 100004)
 `curl -H "Content-Type:application/json" -X DELETE http://localhost:8080/rest/restaurants/100004/votes --user test_user@mail.ru:password`
-##########################################################
-#### FOR ADMIN
+##### Register new user
+`curl -H "Content-Type:application/json" -X POST -d "{\"name\":\"UserNew\",\"email\":\"user_new@yandex.ru\",\"password\":\"newPass123\"}" http://localhost:8080/rest/users/register`
 
-#### Restaurant
+
+##########################################################
+
+
+## Admin functionality
 ##### Get all restaurants
 `curl http://localhost:8080/rest/admin/restaurants --user admin@gmail.com:admin`
 ##### Get restaurant(id = 100004)
@@ -51,22 +55,20 @@ Each restaurant provides new menu each day.
 `curl -H "Content-Type:application/json" -X PUT -d "{\"id\":\"100016\",\"name\":\"Restaurant 1\"}" http://localhost:8080/rest/admin/restaurants/100016 --user admin@gmail.com:admin`
 ##### Delete restaurant
 `curl -H "Content-Type:application/json" -X DELETE http://localhost:8080/rest/admin/restaurants/100016 --user admin@gmail.com:admin`
-#### Dish
 ##### Get dishes by restaurant(restaurantId = 100004)(with history)
 `curl http://localhost:8080/rest/admin/restaurants/100004/dishes --user admin@gmail.com:admin`
 ##### Get dishes by id
 `curl http://localhost:8080/rest/admin/dishes/100007 --user admin@gmail.com:admin`
-##### Create dish
+##### Create new dish
 `curl -H "Content-Type:application/json" -X POST -d "{\"name\":\"Десерт фруктовый\", \"price\":\"350\"}" http://localhost:8080/rest/admin/restaurants/100004/dishes --user admin@gmail.com:admin`
 ##### Update dish
 `curl -H "Content-Type:application/json" -X PUT -d "{\"id\":\"100017\",\"name\":\"Десерт фруктовый\", \"price\":\"300\"}" http://localhost:8080/rest/admin/restaurants/100004/dishes/100017 --user admin@gmail.com:admin`
 ##### Delete dish
 `curl -H "Content-Type:application/json" -X DELETE http://localhost:8080/rest/admin/dishes/100017 --user admin@gmail.com:admin`
-#### Vote
 ##### Get today votes
 `curl http://localhost:8080/rest/admin/votes --user admin@gmail.com:admin`
 ##### Get vote history
-###### all
+###### without filters
 `curl http://localhost:8080/rest/admin/votes/history --user admin@gmail.com:admin`
-###### filtered by date
+###### with filters
 `curl -X GET -d "startDate=2020-12-31" -d "endDate=2020-12-31" -G http://localhost:8080/rest/admin/votes/history --user admin@gmail.com:admin`
