@@ -2,8 +2,10 @@ package ru.restaurant.repository;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.SqlConfig;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import ru.restaurant.model.Vote;
-import ru.restaurant.web.AbstractControllerTest;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,7 +16,9 @@ import java.util.stream.Stream;
 import static ru.restaurant.testData.UserTestData.USER_1_ID;
 import static ru.restaurant.testData.VoteTestData.*;
 
-class VoteRepositoryTest extends AbstractControllerTest {
+@SpringJUnitConfig(locations = {"classpath:spring/spring-app.xml", "classpath:spring/spring-db.xml"})
+@Sql(scripts = "classpath:db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
+class VoteRepositoryTest {
 
     @Autowired
     private VoteRepository voteRepository;
