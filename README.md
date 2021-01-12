@@ -1,4 +1,4 @@
-Design and implement a REST API using Hibernate/Spring/SpringMVC (or Spring-Boot) **without frontend**.
+Design and implement a REST API using Hibernate/Spring/SpringMVC (or Spring-Boot) without frontend.
 
 The task is:
 
@@ -16,7 +16,7 @@ Build a voting system for deciding where to have lunch.
 Each restaurant provides new menu each day.
 
 ---
-### API methods
+# API methods
 #### For regular user
 #### User
 ##### Get current user info
